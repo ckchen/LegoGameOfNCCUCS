@@ -38,7 +38,8 @@ $(document).ready( function(){
 			}
 		});
 		
-		console.log(editOverObjects[0].shapeArray);
+		//注意，預設的三個欄位（時間、id等）用屬性呼叫，自定欄位要以get method呼叫
+		console.log(editOverObjects[0].get('shapeArray'));
 	
 		
 	  },
