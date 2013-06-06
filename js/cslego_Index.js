@@ -7,13 +7,14 @@ $(document).ready( function(){
 	var legosCollection = Parse.Object.extend("legosCollection");
 	var query = new Parse.Query(legosCollection);
 	query.equalTo("isEditOver", true);
-	query.find({
+	query.count({
 	
-	  success: function(editOverObjects) {
+	  success: function(numberOfObjects) {
 	  
-		console.log("總共有" + editOverObjects.length + "張圖片");
+		console.log("總共有" + numberOfObjects + "張圖片");
 		
-		var countPages = Math.ceil(editOverObjects.length / 3);
+		var countPages = Math.ceil(numberOfObjects / 3);
+		var howManyObjectsDisplayed = numberOfObjects % 3;
 		
 		if(countPages == 0){
 		
@@ -39,8 +40,21 @@ $(document).ready( function(){
 		});
 		
 		//注意，預設的三個欄位（時間、id等）用屬性呼叫，自定欄位要以get method呼叫
-		console.log(editOverObjects[0].get('shapeArray'));
-	
+		//console.log(editOverObjects[0].get('shapeArray'));
+		
+		//因為一頁只會顯示三個，所以限制一次最多只能retrieve回來三個
+		query.limit(3);
+		//初始化時，是去顯示最新的作品，所以最後一頁之前的作品可以先不用拿回來
+		query.skip((countPages - 1) * 3);
+		
+		query.find({
+		  success: function(results) {
+			console.log(results + " : " + results.length);
+		  },
+		  error: function(error) {
+			alert("Error: " + error.code + " " + error.message);
+		  }
+		});
 		
 	  },
 	  error: function(error) {
