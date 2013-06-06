@@ -42,6 +42,7 @@ $(document).ready( function(){
 		//注意，預設的三個欄位（時間、id等）用屬性呼叫，自定欄位要以get method呼叫
 		//console.log(editOverObjects[0].get('shapeArray'));
 		
+		//注意query的上限，預設是100，最高只能到1000，所以盡量用skip與limit來限制拿到的範圍
 		//因為一頁只會顯示三個，所以限制一次最多只能retrieve回來三個
 		query.limit(3);
 		//初始化時，是去顯示最新的作品，所以最後一頁之前的作品可以先不用拿回來
@@ -50,6 +51,7 @@ $(document).ready( function(){
 		query.find({
 		  success: function(results) {
 			console.log(results + " : " + results.length);
+			addThePicsResultsToPage(results);
 		  },
 		  error: function(error) {
 			alert("Error: " + error.code + " " + error.message);
@@ -69,6 +71,12 @@ $(document).ready( function(){
 
 });
 
+
+var addThePicsResultsToPage = function(legosRetrieved){
+
+	console.log(legosRetrieved[0].get("authorId"));
+
+}
 
 /*
 
