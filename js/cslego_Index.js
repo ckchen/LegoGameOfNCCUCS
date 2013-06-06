@@ -74,9 +74,99 @@ $(document).ready( function(){
 
 var addThePicsResultsToPage = function(legosRetrieved){
 
-	console.log(legosRetrieved[0].get("authorId"));
+	//console.log(legosRetrieved[0].get("authorId"));
+	
+	//傳進這頁要顯示的數量，創建相對應數量的legos array
+	createTheArrayDisplay(legosRetrieved.length);
+	
+	//跑過底下所有legos的，指定每個lego的格子裡該用什麼屬性
+	loopTablesAndAssignCSS(legosRetrieved.length, legosRetrieved);
 
 }
+
+var createTheArrayDisplay = function(lengthOfDisplayedLegos){
+
+	var fieldToAddDisplay = $('#displayLegos');
+
+	//先清空，再加入顯示
+	fieldToAddDisplay.empty();
+
+	for(var legoNumber = 0; legoNumber < lengthOfDisplayedLegos; legoNumber++){
+		var content = "<table>"
+		for(var addTr = 0; addTr < 10; addTr++){
+  			
+  			content += '<tr>';
+  			
+  			for(var addTd = 0; addTd < 10; addTd++){
+  			
+  				content += '<td><div></div></td>';
+  			
+  			}
+  			
+  			content += '</tr>';
+		}
+		content += "</table>"
+
+		fieldToAddDisplay.append(content);
+	}
+
+}
+
+var loopTablesAndAssignCSS = function(lengthOfDisplayedLegos, objectRetrived){
+
+	for(var whichLego = 0; whichLego < lengthOfDisplayedLegos; whichLego++){
+		
+		var legoAll_Color = objectRetrived[whichLego].get('colorArray');
+		var legoAll_Shape = objectRetrived[whichLego].get('shapeArray');
+		
+		for(var tableR = 0; tableR < 10; tableR++){
+		
+			for(var tableD = 0; tableD < 10; tableD++){
+				
+				//從第一個格子開始assign起
+				var whichBlock = $('#displayLegos table:nth-child(' + (whichLego + 1) + ') tr:nth-child(' + (tableR + 1) + ') td:nth-child(' + (tableD + 1) + ')');
+				
+				whichBlock.css("background", legoAll_Color[tableR][tableD]);
+			
+				var whichShape;
+			
+				switch(legoAll_Shape[tableR][tableD]){
+				
+					//1: leftTop , 2: rightTop , 3: center , 4: leftBottom , 5: rightBottom
+					case 1:
+					
+						whichShape = "leftTop";
+						break;
+					case 2:
+				
+						whichShape = "rightTop";
+						break;
+					case 3:
+				
+						whichShape = "center";
+						break;
+					case 4:
+				
+						whichShape = "leftBottom";
+						break;
+					case 5:
+				
+						whichShape = "rightBottom";
+						break;
+					
+			
+				}
+			
+				whichBlock.addClass(whichShape);
+				
+			}
+		
+		}
+	
+	}
+
+}
+
 
 /*
 

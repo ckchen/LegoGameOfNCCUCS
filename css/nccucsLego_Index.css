@@ -67,3 +67,66 @@ header{
 	margin:13px 23px 0px 23px;
 
 }
+
+#displayLegos table{
+
+	margin:25px 44px;
+	border-collapse:separate;
+	display:inline-block;
+
+}
+
+#displayLegos table tr td{
+
+	width:35px;
+	height:35px;
+	border:1px solid #EDEDED;
+
+}
+
+#displayLegos table tr td div{
+
+	width:100%;
+	height:100%;
+
+}
+
+.leftTop{
+
+	border-radius: 90px 0 0 0;
+	-moz-border-radius: 90px 0 0 0;
+	-webkit-border-radius: 90px 0 0 0;
+
+}
+
+.rightTop{
+
+	border-radius: 0 90px 0 0;
+	-moz-border-radius: 0 90px 0 0;
+	-webkit-border-radius: 0 90px 0 0;
+
+}
+
+.center{
+
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+
+}
+
+.leftBottom{
+
+	border-radius: 0 0 0 90px;
+	-moz-border-radius: 0 0 0 90px;
+	-webkit-border-radius: 0 0 0 90px;
+
+}
+
+.rightBottom{
+
+	border-radius: 0 0 90px 0;
+	-moz-border-radius: 0 0 90px 0;
+	-webkit-border-radius: 0 0 90px 0;
+
+}
