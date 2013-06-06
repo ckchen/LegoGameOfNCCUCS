@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Lego Game of NCCU CS</title>
+	<meta name="viewprot" content="width=device-width, initial-scale=1.0" />
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+	<link href="css/nccucsLego_Index.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
+	<script src="http://www.parsecdn.com/js/parse-1.2.8.min.js"></script>
+	<script src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.paginate.js"></script>
+	<script type="text/javascript" src="js/cslego_Index.js"></script>
+  </head>
+  <body>
+  	<script>
+  		
+		//初始化Parse的設定
+		Parse.initialize("tbimiY2A0KZHiBWmec5feWnyV08gCXmxGAMNOe2Q", "ml4SiRmPnoEsa8IVFd0DBlbdVgazqLKzTaEyDD05");
+		
+  	</script>
+  	<div id="fb-root"></div>
+	<script>
+	  window.fbAsyncInit = function() {
+		// init the FB JS SDK
+		Parse.FacebookUtils.init({
+		  appId      : 654164507933619,                      // App ID from the app dashboard
+		  channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel file for x-domain comms
+		  status     : true,                                 // Check Facebook Login status
+		  xfbml      : true                                  // Look for social plugins on the page
+		});
+
+		// Additional initialization code such as adding Event Listeners goes here
+		
+	  };
+
+	  // Load the SDK asynchronously
+	  (function(d, s, id){
+		 var js, fjs = d.getElementsByTagName(s)[0];
+		 if (d.getElementById(id)) {return;}
+		 js = d.createElement(s); js.id = id;
+		 js.src = "//connect.facebook.net/en_US/all.js";
+		 fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	   
+	</script>
+	<header>
+		<h1 class="text-left">NCCUCS LEGO BOARD<br/><small>Choose the shape, <br/>Pick the color, <br/>Instantly build your own CS logo!</small></h1>
+	</header>
+	<div>
+		<button class="btn btn-success marginL" id="createButton" onclick="window.location = 'http://cheerydachshund.com/LegoGameOfCS/LegoBoard.html';">Create Your Own Lego</button>
+		<div id="pageList">
+		</div>
+	</div>
+  </body>
+</html>

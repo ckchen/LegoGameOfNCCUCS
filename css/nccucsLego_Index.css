@@ -1,0 +1,69 @@
+body{
+
+	margin:0px;
+
+}
+
+h1{
+
+	color:#FFFFFF;
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
+	padding:25px 25px;
+	display:inline-block;
+
+}
+
+h1 small{
+
+	color:#AAAAAA;
+	font-weight:normal;
+	font-size:14px;
+
+}
+
+header{
+	
+	margin:0px;
+	padding:0px;
+	background:#000000;
+
+}
+
+.floatRight{
+
+	float:right;
+
+}
+
+.buttonMargin{
+
+	margin:25px 30px;
+
+}
+
+.spanMargin{
+
+	margin:0px 30px;
+
+}
+
+#pageList{
+	
+	margin:10px 17px;
+	font-size:18px;
+	
+}
+
+#welcome{
+
+	color:#FFF;
+	font-size:15px;
+
+}
+
+.marginL{
+
+	margin:13px 23px 0px 23px;
+
+}
