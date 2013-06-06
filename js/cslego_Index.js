@@ -7,13 +7,13 @@ $(document).ready( function(){
 	var legosCollection = Parse.Object.extend("legosCollection");
 	var query = new Parse.Query(legosCollection);
 	query.equalTo("isEditOver", true);
-	query.count({
+	query.find({
 	
-	  success: function(countPics) {
+	  success: function(editOverObjects) {
 	  
-		console.log("總共有" + countPics + "張圖片");
+		console.log("總共有" + editOverObjects.length + "張圖片");
 		
-		var countPages = Math.ceil(countPics / 3);
+		var countPages = Math.ceil(editOverObjects.length / 3);
 		
 		if(countPages == 0){
 		
@@ -23,22 +23,22 @@ $(document).ready( function(){
 		
 		//設定pageList的數量
 		$("#pageList").paginate({
-		count: countPages,
-		start: countPages,
-		display: countPages,
-		border: false,
-		text_color: '#888',
-		background_color: 'none',	
-		text_hover_color: '#2573AF',
-		background_hover_color: 'none', 
-		images: false,
-		mouse: 'press',
-		onChange: function(page){
-			console.log(page);
-		}
+			count: countPages,
+			start: countPages,
+			display: countPages,
+			border: false,
+			text_color: '#888',
+			background_color: 'none',	
+			text_hover_color: '#2573AF',
+			background_hover_color: 'none', 
+			images: false,
+			mouse: 'press',
+			onChange: function(page){
+				console.log(page);
+			}
 		});
 		
-		
+		console.log(editOverObjects[0]);
 	
 		
 	  },
