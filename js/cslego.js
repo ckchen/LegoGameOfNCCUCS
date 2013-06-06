@@ -247,7 +247,7 @@ var addEventOfPublishButton = function(){
 			legos.save(null, {
 				success: function(){
 				
-					window.location = "http://cheerydachshund.com/LegoGameOfCS/";
+					window.location = "index.html";
 			
 				}
 			});
