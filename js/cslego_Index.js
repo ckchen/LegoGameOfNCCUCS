@@ -15,6 +15,12 @@ $(document).ready( function(){
 		
 		var countPages = Math.ceil(countPics / 3);
 		
+		if(countPages == 0){
+		
+			countPages = 1;
+		
+		}
+		
 		//設定pageList的數量
 		$("#pageList").paginate({
 		count: countPages,

@@ -60,8 +60,6 @@ $(document).ready( function(){
 		}
 		
 	}
-	
-	//$('.minicolors').minicolors(settings);
 
 	//Create the right table for lego
 	
@@ -134,15 +132,18 @@ $(document).ready( function(){
 		//清除完要更新所有陣列圖片
 		updateThePics();
 	
-	})
-	
+	});
+
 	updateThePics();
 	
-	/*var TestObject = Parse.Object.extend("TestObject");  //在TestObject的資料集中新增一筆
-	var testObject = new TestObject();  //new TestObject即可開始使用
-
-	testObject.save();*/
+	addEventOfLoginButton();
 	
+	addEventOfPublishButton();
+	
+});
+
+var addEventOfLoginButton = function(){
+
 	//增加登入button的事件
 	$("#loginButton").click(function(){
 	
@@ -221,12 +222,10 @@ $(document).ready( function(){
 		 });
 		
 	});
-	
-	addSaveFunction();
-	
-});
 
-var addSaveFunction = function(){
+}
+
+var addEventOfPublishButton = function(){
 	
 	//加入儲存的功能
 	$("#saveButton").click(function(){
@@ -245,9 +244,12 @@ var addSaveFunction = function(){
 			legos.set("colorArray", legoAll_Color);
 			legos.set("shapeArray", legoAll_Shape);
 			legos.set("isEditOver", true);
-			legos.save();
-		
-			window.location = "http://cheerydachshund.com/LegoGameOfCS/";
+			legos.save(null, success: function(){
+				
+				window.location = "http://cheerydachshund.com/LegoGameOfCS/";
+			
+			});
+
 		});
 	
 	});
@@ -282,6 +284,14 @@ var updateTheArray = function(whichObject){
 	
 	//呼叫更新function updateThePics，即可將圖片按照新陣列作更新
 	updateThePics();
+	
+	pushUpdateToCloud();
+}
+
+var pushUpdateToCloud = function(){
+
+	
+
 }
 
 var updateThePics = function(){
