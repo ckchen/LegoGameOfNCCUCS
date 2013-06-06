@@ -38,7 +38,7 @@ $(document).ready( function(){
 			}
 		});
 		
-		console.log(editOverObjects[0]);
+		console.log(editOverObjects[0].shapeArray);
 	
 		
 	  },
