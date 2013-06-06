@@ -1,4 +1,6 @@
 
+var howManyObjects;
+
 $(document).ready( function(){
 
 	// 讀取Parse資料裡的圖片，將它化成畫面上的陣列
@@ -12,6 +14,9 @@ $(document).ready( function(){
 	  success: function(numberOfObjects) {
 	  
 		console.log("總共有" + numberOfObjects + "張圖片");
+		
+		//將objects數量存到Globale變數中，方便使用
+		howManyObjects = numberOfObjects;
 		
 		var countPages = Math.ceil(numberOfObjects / 3);
 		var howManyObjectsDisplayed = numberOfObjects % 3;
@@ -35,7 +40,25 @@ $(document).ready( function(){
 			images: false,
 			mouse: 'press',
 			onChange: function(page){
-				console.log(page);
+				
+				//當使用者點選pagelist，按照對應頁面，去拿回需要的lego pics
+				var pageLegosCollection = Parse.Object.extend("legosCollection");
+				var pageQuery = new Parse.Query(pageLegosCollection);
+				
+				pageQuery.limit(3);
+				pageQuery.skip((page - 1) * 3);
+				
+				pageQuery.find({
+				  success: function(results) {
+					
+					addThePicsResultsToPage(results);
+					
+				  },
+				  error: function(error) {
+					alert("Error: " + error.code + " " + error.message);
+				  }
+				});
+				
 			}
 		});
 		
@@ -50,8 +73,9 @@ $(document).ready( function(){
 		
 		query.find({
 		  success: function(results) {
-			console.log(results + " : " + results.length);
+			
 			addThePicsResultsToPage(results);
+			
 		  },
 		  error: function(error) {
 			alert("Error: " + error.code + " " + error.message);
