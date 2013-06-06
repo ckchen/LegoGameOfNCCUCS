@@ -244,10 +244,12 @@ var addEventOfPublishButton = function(){
 			legos.set("colorArray", legoAll_Color);
 			legos.set("shapeArray", legoAll_Shape);
 			legos.set("isEditOver", true);
-			legos.save(null, success: function(){
+			legos.save(null, {
+				success: function(){
 				
-				window.location = "http://cheerydachshund.com/LegoGameOfCS/";
+					window.location = "http://cheerydachshund.com/LegoGameOfCS/";
 			
+				}
 			});
 
 		});
