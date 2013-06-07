@@ -146,9 +146,9 @@ var loopTablesAndAssignCSS = function(lengthOfDisplayedLegos, objectRetrived){
 	for(var whichLego = 0; whichLego < lengthOfDisplayedLegos; whichLego++){
 		
 		//加入圖片與名字
-		FB.api('/me', function(response) {
+		FB.api(objectRetrived[whichLego].get('authorId'), function(response) {
 		
-			$('#displayLegos p').html('<img src="http://graph.facebook.com/' + objectRetrived.get('authorId') + '/picture" /><br/><span>' + response.name + '</span>');
+			$('#displayLegos p').html('<img src="http://graph.facebook.com/' + objectRetrived[whichLego].get('authorId') + '/picture" /><br/><span>' + response.name + '</span>');
 			
 		}
 		
