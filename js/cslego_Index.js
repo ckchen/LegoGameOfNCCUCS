@@ -45,6 +45,7 @@ $(document).ready( function(){
 				var pageLegosCollection = Parse.Object.extend("legosCollection");
 				var pageQuery = new Parse.Query(pageLegosCollection);
 				
+				//似乎是資料retrieve回來數量有問題，所以多跑了三次
 				pageQuery.limit(3);
 				pageQuery.skip((page - 1) * 3);
 				
@@ -147,9 +148,9 @@ var loopTablesAndAssignCSS = function(lengthOfDisplayedLegos, objectRetrived){
 
 	for(var whichLego = 0; whichLego < lengthOfDisplayedLegos; whichLego++){
 		
-		var userID = objectRetrived[whichLego].get('authorId');
+		/*var userID = objectRetrived[whichLego].get('authorId');
 		
-		console.log(whichLego);
+		//console.log(whichLego);
 		
 		$.getJSON('http://graph.facebook.com/' + userID, function(data) {
 		  
@@ -158,7 +159,7 @@ var loopTablesAndAssignCSS = function(lengthOfDisplayedLegos, objectRetrived){
 		  	//加入圖片與名字
 			$('#displayLegos div:nth-child(' + whichLego +') p').html('<img src="http://graph.facebook.com/' + userID + '/picture" /><br/><span>' + data.name + '</span>');
 			
-		});
+		});*/
 		
 		var legoAll_Color = objectRetrived[whichLego].get('colorArray');
 		var legoAll_Shape = objectRetrived[whichLego].get('shapeArray');
