@@ -120,7 +120,7 @@ var createTheArrayDisplay = function(lengthOfDisplayedLegos){
 	fieldToAddDisplay.empty();
 
 	for(var legoNumber = 0; legoNumber < lengthOfDisplayedLegos; legoNumber++){
-		var content = "<p></p><table>"
+		var content = "<table>"
 		for(var addTr = 0; addTr < 10; addTr++){
   			
   			content += '<tr>';
