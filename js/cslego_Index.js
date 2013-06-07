@@ -149,7 +149,7 @@ var loopTablesAndAssignCSS = function(lengthOfDisplayedLegos, objectRetrived){
 		
 		var userID = objectRetrived[whichLego].get('authorId');
 		
-		console.log("Hello");
+		console.log(whichLego);
 		
 		$.getJSON('http://graph.facebook.com/' + userID, function(data) {
 		  
