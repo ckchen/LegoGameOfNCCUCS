@@ -33,7 +33,7 @@ $(document).ready( function(){
 			display: 20,
 			border: false,
 			text_color: '#888',
-			background_color: 'none',	
+			background_color: 'none',
 			text_hover_color: '#2573AF',
 			background_hover_color: 'none', 
 			images: false,
