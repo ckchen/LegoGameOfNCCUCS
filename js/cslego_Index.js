@@ -153,7 +153,7 @@ var loopTablesAndAssignCSS = function(lengthOfDisplayedLegos, objectRetrived){
 			for(var tableD = 0; tableD < 10; tableD++){
 				
 				//從第一個格子開始assign起
-				var whichBlock = $('#displayLegos table:nth-child(' + (whichLego + 1) + ') tr:nth-child(' + (tableR + 1) + ') td:nth-child(' + (tableD + 1) + ')');
+				var whichBlock = $('#displayLegos table:nth-child(' + (whichLego + 1) + ') tr:nth-child(' + (tableR + 1) + ') td:nth-child(' + (tableD + 1) + ') div');
 				
 				whichBlock.css("background", legoAll_Color[tableR][tableD]);
 			
