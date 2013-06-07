@@ -30,7 +30,7 @@ $(document).ready( function(){
 		$("#pageList").paginate({
 			count: countPages,
 			start: countPages,
-			display: countPages,
+			display: 20,
 			border: false,
 			text_color: '#888',
 			background_color: 'none',	
