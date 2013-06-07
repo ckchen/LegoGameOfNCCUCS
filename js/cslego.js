@@ -233,13 +233,13 @@ var addEventOfPublishButton = function(){
 		var legosCollection = Parse.Object.extend("legosCollection");
 		var legos = new legosCollection();
 		
-		alert("You're now saving the lego");
-		
 		var userId;
 				
 		FB.api('/me', function(response) {
 			
 			if(response.id != undefined){
+				
+				alert("You're now saving the lego");
 				
 				userId = response.id;
 				legos.set("authorId", userId);
