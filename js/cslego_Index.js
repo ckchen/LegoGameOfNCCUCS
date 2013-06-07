@@ -149,9 +149,11 @@ var loopTablesAndAssignCSS = function(lengthOfDisplayedLegos, objectRetrived){
 		
 		var userID = objectRetrived[whichLego].get('authorId');
 		
+		console.log("Hello");
+		
 		$.getJSON('http://graph.facebook.com/' + userID, function(data) {
 		  
-			console.log(data.name);
+			//console.log(data.name);
 		  
 		  	//加入圖片與名字
 			$('#displayLegos div:nth-child(' + whichLego +') p').html('<img src="http://graph.facebook.com/' + userID + '/picture" /><br/><span>' + data.name + '</span>');
