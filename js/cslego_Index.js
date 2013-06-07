@@ -121,7 +121,7 @@ var createTheArrayDisplay = function(lengthOfDisplayedLegos){
 	fieldToAddDisplay.empty();
 
 	for(var legoNumber = 0; legoNumber < lengthOfDisplayedLegos; legoNumber++){
-		var content = "<table>"
+		var content = "<p></p><table>"
 		for(var addTr = 0; addTr < 10; addTr++){
   			
   			content += '<tr>';
@@ -144,6 +144,13 @@ var createTheArrayDisplay = function(lengthOfDisplayedLegos){
 var loopTablesAndAssignCSS = function(lengthOfDisplayedLegos, objectRetrived){
 
 	for(var whichLego = 0; whichLego < lengthOfDisplayedLegos; whichLego++){
+		
+		//加入圖片與名字
+		FB.api('/me', function(response) {
+		
+			$('#displayLegos p').html('<img src="http://graph.facebook.com/' + objectRetrived.get('authorId') + '/picture" /><br/><span>' + response.name + '</span>');
+			
+		}
 		
 		var legoAll_Color = objectRetrived[whichLego].get('colorArray');
 		var legoAll_Shape = objectRetrived[whichLego].get('shapeArray');
