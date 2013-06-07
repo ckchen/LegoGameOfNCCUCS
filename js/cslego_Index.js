@@ -110,7 +110,7 @@ var addThePicsResultsToPage = function(legosRetrieved){
 	//跑過底下所有legos的，指定每個lego的格子裡該用什麼屬性
 	loopTablesAndAssignCSS(legosRetrieved.length, legosRetrieved);
 
-} 
+}  
 
 var createTheArrayDisplay = function(lengthOfDisplayedLegos){
 
