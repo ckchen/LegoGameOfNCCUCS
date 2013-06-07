@@ -194,7 +194,7 @@ var loopTablesAndAssignCSS = function(lengthOfDisplayedLegos, objectRetrived){
 	
 	}
 	
-//	$("#displayLegos table").fadeIn("300");
+	$("#displayLegos table").fadeIn("300");
 
 }
 
