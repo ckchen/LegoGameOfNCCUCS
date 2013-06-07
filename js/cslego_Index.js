@@ -150,7 +150,7 @@ var loopTablesAndAssignCSS = function(lengthOfDisplayedLegos, objectRetrived){
 		
 			$('#displayLegos p').html('<img src="http://graph.facebook.com/' + objectRetrived[whichLego].get('authorId') + '/picture" /><br/><span>' + response.name + '</span>');
 			
-		}
+		});
 		
 		var legoAll_Color = objectRetrived[whichLego].get('colorArray');
 		var legoAll_Shape = objectRetrived[whichLego].get('shapeArray');
