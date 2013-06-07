@@ -187,7 +187,6 @@ var addEventOfLoginButton = function(){
 					 
 					 //使用者拒絕登入，button一樣是login
 					alert("Please authenticate this application, or you will not be able to create the new lego of your own!");
-					window.location = 'LegoBoard.html';
 					 
 				   }
 				 });
@@ -214,7 +213,6 @@ var addEventOfLoginButton = function(){
 					 
 					//使用者拒絕登入，button一樣是login
 					alert("Please log in to Facebook, or you will not be able to create the new lego of your own!");
-					window.location = 'LegoBoard.html';
 					 
 				   }
 				 });
@@ -241,18 +239,26 @@ var addEventOfPublishButton = function(){
 				
 		FB.api('/me', function(response) {
 			
-			userId = response.id;
-			legos.set("authorId", userId);
-			legos.set("colorArray", legoAll_Color);
-			legos.set("shapeArray", legoAll_Shape);
-			legos.set("isEditOver", true);
-			legos.save(null, {
-				success: function(){
+			if(response.id != undefined){
 				
-					window.location = "index.html";
+				userId = response.id;
+				legos.set("authorId", userId);
+				legos.set("colorArray", legoAll_Color);
+				legos.set("shapeArray", legoAll_Shape);
+				legos.set("isEditOver", true);
+				legos.save(null, {
+					success: function(){
+				
+						window.location = "index.html";
 			
-				}
-			});
+					}
+				});
+
+			}else{
+			
+				alert("Please login or authorize this app, or you may not be able to publish the lego board!");
+			
+			}
 
 		});
 	
