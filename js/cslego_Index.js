@@ -40,6 +40,7 @@ $(document).ready( function(){
 			mouse: 'press',
 			onChange: function(page){
 				
+				console.log(page);
 				//當使用者點選pagelist，按照對應頁面，去拿回需要的lego pics
 				var pageLegosCollection = Parse.Object.extend("legosCollection");
 				var pageQuery = new Parse.Query(pageLegosCollection);
