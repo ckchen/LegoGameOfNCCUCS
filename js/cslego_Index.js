@@ -51,7 +51,12 @@ $(document).ready( function(){
 				pageQuery.find({
 				  success: function(results) {
 					
-					addThePicsResultsToPage(results);
+					//加入fadeout smooth的效果
+					$("#displayLegos table").fadeOut("300", function () {
+
+   						addThePicsResultsToPage(results);
+   						
+					});
 					
 				  },
 				  error: function(error) {
@@ -188,6 +193,8 @@ var loopTablesAndAssignCSS = function(lengthOfDisplayedLegos, objectRetrived){
 		}
 	
 	}
+	
+//	$("#displayLegos table").fadeIn("300");
 
 }
 
