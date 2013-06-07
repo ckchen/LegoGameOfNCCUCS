@@ -187,6 +187,7 @@ var addEventOfLoginButton = function(){
 					 
 					 //使用者拒絕登入，button一樣是login
 					alert("Please authenticate this application, or you will not be able to create the new lego of your own!");
+					window.location = 'LegoBoard.html';
 					 
 				   }
 				 });
@@ -213,6 +214,7 @@ var addEventOfLoginButton = function(){
 					 
 					//使用者拒絕登入，button一樣是login
 					alert("Please log in to Facebook, or you will not be able to create the new lego of your own!");
+					window.location = 'LegoBoard.html';
 					 
 				   }
 				 });

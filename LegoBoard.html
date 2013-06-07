@@ -56,7 +56,7 @@
 			
 				// the user is logged in to Facebook, 
 				// but has not authenticated your app
-				/*
+				
 				 FB.login(function(response) {
 				   if (response.authResponse) {
 					 
@@ -75,17 +75,15 @@
 					 
 					 //使用者拒絕登入，button一樣是login
 					alert("Please authenticate this application, or you will not be able to create the new lego of your own!");
+					window.location = 'LegoBoard.html';
 					 
 				   }
 				 });
-				*/
-				alert("Please authoize this application to build your lego board");
 				
-				window.location = 'LegoBoard.html';
 				
 			}else {
 				
-				/*// the user isn't logged in to Facebook.
+				// the user isn't logged in to Facebook.
 				
 				FB.login(function(response) {
 				   if (response.authResponse) {
@@ -105,13 +103,11 @@
 					 
 					//使用者拒絕登入，button一樣是login
 					alert("Please log in to Facebook, or you will not be able to create the new lego of your own!");
+				
+					window.location = 'LegoBoard.html';
 					 
 				   }
 				 });*/
-				 
-				alert("Please authoize this application to build your lego board");
-				
-				window.location = 'LegoBoard.html';
 				
 		  	}
 		  	
