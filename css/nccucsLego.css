@@ -64,8 +64,8 @@ table.largePicker{
 
 table.largePicker tr td{
 
-	width:58px;
-	height:58px;
+	width:54px;
+	height:54px;
 	border:1px solid #EDEDED;
 
 }
@@ -85,16 +85,16 @@ table.largePicker tr td div{
 
 table.miniPicker{
 
-	width:174px;
-	height:174px;
+	width:162px;
+	height:162px;
 	border-collapse:separate;
 	
 }
 
 table.miniPicker tr td{
 
-	width:58px;
-	height:58px;
+	width:54px;
+	height:54px;
 
 }
 
