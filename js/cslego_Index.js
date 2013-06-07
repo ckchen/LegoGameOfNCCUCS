@@ -120,7 +120,7 @@ var createTheArrayDisplay = function(lengthOfDisplayedLegos){
 	fieldToAddDisplay.empty();
 
 	for(var legoNumber = 0; legoNumber < lengthOfDisplayedLegos; legoNumber++){
-		var content = "<table>"
+		var content = "<div><p></p><table>"
 		for(var addTr = 0; addTr < 10; addTr++){
   			
   			content += '<tr>';
@@ -133,7 +133,7 @@ var createTheArrayDisplay = function(lengthOfDisplayedLegos){
   			
   			content += '</tr>';
 		}
-		content += "</table>"
+		content += "</table></div>"
 
 		fieldToAddDisplay.append(content);
 	}
@@ -146,14 +146,14 @@ var loopTablesAndAssignCSS = function(lengthOfDisplayedLegos, objectRetrived){
 
 	for(var whichLego = 0; whichLego < lengthOfDisplayedLegos; whichLego++){
 		
-		/*$.getJSON('http://graph.facebook.com/' + objectRetrived[whichLego].get('authorId'), function(data) {
+		$.getJSON('http://graph.facebook.com/' + objectRetrived[whichLego].get('authorId'), function(data) {
 		  
 			console.log(data.name);
 		  
-		});*/
+		});
 		
 		//加入圖片與名字
-		//$('#displayLegos p').html('<img src="http://graph.facebook.com/' + objectRetrived[whichLego].get('authorId') + '/picture" /><br/><span>' +  + '</span>');
+		$('#displayLegos div:nth-child(' + whichLego +') p').html('<img src="http://graph.facebook.com/' + objectRetrived[whichLego].get('authorId') + '/picture" /><br/><span>' +  + '</span>');
 		
 		var legoAll_Color = objectRetrived[whichLego].get('colorArray');
 		var legoAll_Shape = objectRetrived[whichLego].get('shapeArray');
@@ -163,7 +163,7 @@ var loopTablesAndAssignCSS = function(lengthOfDisplayedLegos, objectRetrived){
 			for(var tableD = 0; tableD < 10; tableD++){
 				
 				//從第一個格子開始assign起
-				var whichBlock = $('#displayLegos table:nth-child(' + (whichLego + 1) + ') tr:nth-child(' + (tableR + 1) + ') td:nth-child(' + (tableD + 1) + ') div');
+				var whichBlock = $('#displayLegos div:nth-child(' + (whichLego + 1) + ') table tr:nth-child(' + (tableR + 1) + ') td:nth-child(' + (tableD + 1) + ') div');
 				
 				whichBlock.css("background", legoAll_Color[tableR][tableD]);
 			
