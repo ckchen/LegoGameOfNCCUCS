@@ -144,11 +144,11 @@ var loopTablesAndAssignCSS = function(lengthOfDisplayedLegos, objectRetrived){
 
 	for(var whichLego = 0; whichLego < lengthOfDisplayedLegos; whichLego++){
 		
-		$.getJSON('http://graph.facebook.com/' + objectRetrived[whichLego].get('authorId'), function(data) {
+		/*$.getJSON('http://graph.facebook.com/' + objectRetrived[whichLego].get('authorId'), function(data) {
 		  
 			console.log(data.name);
 		  
-		});
+		});*/
 		
 		//加入圖片與名字
 		//$('#displayLegos p').html('<img src="http://graph.facebook.com/' + objectRetrived[whichLego].get('authorId') + '/picture" /><br/><span>' +  + '</span>');
