@@ -153,10 +153,10 @@ var loopTablesAndAssignCSS = function(lengthOfDisplayedLegos, objectRetrived){
 			console.log(data.name);
 			fbName = data.name;
 		  
+		  	//加入圖片與名字
+			$('#displayLegos div:nth-child(' + whichLego +') p').html('<img src="http://graph.facebook.com/' + objectRetrived[whichLego].get('authorId') + '/picture" /><br/><span>' + fbName + '</span>');
+			
 		});
-		
-		//加入圖片與名字
-		$('#displayLegos div:nth-child(' + whichLego +') p').html('<img src="http://graph.facebook.com/' + objectRetrived[whichLego].get('authorId') + '/picture" /><br/><span>' + fbName + '</span>');
 		
 		var legoAll_Color = objectRetrived[whichLego].get('colorArray');
 		var legoAll_Shape = objectRetrived[whichLego].get('shapeArray');
