@@ -68,7 +68,13 @@ header{
 
 }
 
-#displayLegos table{
+#displayLegos div{
+
+	display:inline-block;
+
+}
+
+#displayLegos div table{
 
 	margin:25px 44px;
 	border-collapse:separate;
@@ -76,7 +82,7 @@ header{
 
 }
 
-#displayLegos table tr td{
+#displayLegos div table tr td{
 
 	width:30px;
 	height:30px;
@@ -84,7 +90,7 @@ header{
 
 }
 
-#displayLegos table tr td div{
+#displayLegos div table tr td div{
 
 	width:100%;
 	height:100%;
