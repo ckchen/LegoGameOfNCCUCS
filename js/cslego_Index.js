@@ -137,6 +137,8 @@ var createTheArrayDisplay = function(lengthOfDisplayedLegos){
 
 		fieldToAddDisplay.append(content);
 	}
+	
+	$("#displayLegos table").fadeIn("300");
 
 }
 
@@ -201,8 +203,6 @@ var loopTablesAndAssignCSS = function(lengthOfDisplayedLegos, objectRetrived){
 		}
 	
 	}
-	
-	$("#displayLegos table").fadeIn("300");
 
 }
 
